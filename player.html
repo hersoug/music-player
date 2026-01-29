@@ -3,18 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Music Player</title>
+  <title>Vår KI-genererte musikk</title>
   <link rel="stylesheet" href="assets/css/player.css" />
 </head>
 <body>
   <main class="player">
     <header class="player-header">
-      <h1>Music Player</h1>
+      <h1>Vår KI-genererte musikk<h/1>
 
-      <!-- Brand/logo container in the upper-right.
-           Option A (quick): use the remote URL you provided.
-           Option B (recommended): replace src with a local file like assets/images/logo.png
-      -->
       <div class="header-right">
         <img id="brand-logo"
              src="https://media.licdn.com/dms/image/v2/D4D0BAQENond2Y_bESQ/company-logo_200_200/B4DZjhluVGGsAM-/0/1756131419830/kantega_logo?e=2147483647&v=beta&t=3wtCfyFBAlrDddMtlK6ZhIVT48iqkGx9SXttP6eWxo0"
@@ -25,7 +21,7 @@
     <section class="now-playing">
       <img id="cover" alt="cover" src="" />
       <div class="meta">
-        <h2 id="title">No track loaded</h2>
+        <h2 id="title">Ingen spor lastet</h2>
         <p id="artist"></p>
         <p id="album"></p>
       </div>
@@ -34,9 +30,9 @@
     <audio id="audio" preload="metadata"></audio>
 
     <section class="controls">
-      <button id="prev" title="Previous">⏮</button>
-      <button id="play" title="Play">▶️</button>
-      <button id="next" title="Next">⏭</button>
+      <button id="prev" title="Forrige">⏮</button>
+      <button id="play" title="Spill">▶️</button>
+      <button id="next" title="Neste">⏭</button>
       <div class="time">
         <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
       </div>
@@ -46,18 +42,14 @@
     </section>
 
     <section class="playlist">
-      <h3>Playlist</h3>
+      <h3>Spilleliste</h3>
       <ul id="playlist"></ul>
     </section>
 
     <section class="lyrics">
-      <h3>Lyrics</h3>
-      <pre id="lyrics">No lyrics available.</pre>
+      <h3>Lyrikk</h3>
+      <pre id="lyrics">Ingen tilgjengelig lyrikk.</pre>
     </section>
-
-    <footer>
-      <p>Put MP3 files under the <code>/music/</code> folder and add metadata to <code>/data/songs.json</code>.</p>
-    </footer>
   </main>
 
   <script src="assets/js/player.js"></script>
