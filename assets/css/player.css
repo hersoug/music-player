@@ -4,6 +4,10 @@
   --muted: #9aa7b2;
   --accent: #7dd3fc;
   --text: #e6eef6;
+
+  /* Brand color — adjust to match your logo exactly.
+     I set a reasonable blue approximation; change this to the exact hex if you prefer. */
+  --brand-bg: #0a74b6;
   font-size: 16px;
 }
 *{box-sizing:border-box}
@@ -14,14 +18,53 @@ body{
   margin:0;
   padding:1rem;
 }
+
+/* Use the brand color as the player's base background so the logo blends in.
+   Keep a light gradient overlay for depth. */
 .player{
   max-width:900px;
   margin:0 auto;
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
+              var(--brand-bg);
   padding:1rem;
   border-radius:8px;
   box-shadow:0 6px 24px rgba(0,0,0,0.5);
 }
+
+/* Header layout: title on the left, logo on the right */
+.player-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:0.75rem;
+}
+
+/* Logo sizing & placement */
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+#brand-logo{
+  height:44px;           /* tweak to taste */
+  width:auto;
+  display:block;
+  border-radius:6px;     /* optional: rounded corners */
+  object-fit:contain;
+  /* subtle border to separate logo from background if needed */
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* If the logo has a white background and you'd prefer it to look good on the brand color,
+   you can add a small inset shadow or subtle background to the logo container:
+*/
+.header-right img{
+  background: rgba(255,255,255,0.03); /* subtle backing to make white logos read on color */
+  padding:4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* Existing styles left mostly unchanged */
 .now-playing{
   display:flex;
   gap:1rem;
@@ -42,6 +85,7 @@ body{
   gap:.5rem;
   align-items:center;
   margin-top:1rem;
+  flex-wrap:wrap;
 }
 .controls button{
   background:transparent;
