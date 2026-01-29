@@ -8,8 +8,18 @@
 </head>
 <body>
   <main class="player">
-    <header>
+    <header class="player-header">
       <h1>Music Player</h1>
+
+      <!-- Brand/logo container in the upper-right.
+           Option A (quick): use the remote URL you provided.
+           Option B (recommended): replace src with a local file like assets/images/logo.png
+      -->
+      <div class="header-right">
+        <img id="brand-logo"
+             src="https://media.licdn.com/dms/image/v2/D4D0BAQENond2Y_bESQ/company-logo_200_200/B4DZjhluVGGsAM-/0/1756131419830/kantega_logo?e=2147483647&v=beta&t=3wtCfyFBAlrDddMtlK6ZhIVT48iqkGx9SXttP6eWxo0"
+             alt="Company logo">
+      </div>
     </header>
 
     <section class="now-playing">
@@ -24,10 +34,14 @@
     <audio id="audio" preload="metadata"></audio>
 
     <section class="controls">
-      <button id="prev">⏮</button>
-      <button id="play">▶️</button>
-      <button id="next">⏭</button>
+      <button id="prev" title="Previous">⏮</button>
+      <button id="play" title="Play">▶️</button>
+      <button id="next" title="Next">⏭</button>
+      <div class="time">
+        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+      </div>
       <input id="progress" type="range" min="0" max="100" value="0">
+      <label for="volume">Vol</label>
       <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
     </section>
 
