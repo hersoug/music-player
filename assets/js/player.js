@@ -1,5 +1,5 @@
 /* Simple web music player
- * Expects a JSON file at /data/songs.json with an array of tracks.
+ * Expects a JSON file at data/songs.json with an array of tracks.
  *
  * Track object example:
  * {
@@ -42,7 +42,7 @@
 
   async function loadPlaylist(){
     try{
-      const res = await fetch('/data/songs.json', {cache: 'no-cache'});
+      const res = await fetch('data/songs.json', {cache: 'no-cache'});
       if(!res.ok) throw new Error('Failed to fetch songs.json: ' + res.status);
       playlist = await res.json();
     }catch(err){
