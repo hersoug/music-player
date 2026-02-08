@@ -8,8 +8,9 @@
  *   "title": "Song One",
  *   "artist": "Artist",
  *   "album": "Album",
- *   "cover": "music/covers/song1.jpg",   // optional
- *   "lyrics": "These are the lyrics..."  // or a URL to a .txt or .lrc file
+ *   "cover": "music/covers/song1.jpg",         // optional
+ *   "lyrics": "These are the lyrics...",       // or a URL to a .txt or .lrc file
+ *   "artist_comments": "Artist's thoughts..."  // or a URL to a .txt file
  * }
  */
 (() => {
@@ -19,6 +20,7 @@
   const albumEl = document.getElementById('album');
   const coverEl = document.getElementById('cover');
   const lyricsEl = document.getElementById('lyrics');
+  const artistCommentsEl = document.getElementById('artist-comments');
   const playlistEl = document.getElementById('playlist');
   const playBtn = document.getElementById('play');
   const prevBtn = document.getElementById('prev');
@@ -104,6 +106,26 @@
     } else {
       // inline lyrics text
       lyricsEl.textContent = t.lyrics;
+    }
+
+    // artist comments can be a string or a URL
+    if(!t.artist_comments){
+      artistCommentsEl.textContent = 'Ingen kommentarer tilgjengelig.';
+    } else if(typeof t.artist_comments === 'string' && (t.artist_comments.startsWith('http://') || t.artist_comments.startsWith('https://') || t.artist_comments.endsWith('.txt'))){
+      try{
+        const r = await fetch(t.artist_comments);
+        if(r.ok){
+          const txt = await r.text();
+          artistCommentsEl.textContent = txt || 'Ingen kommentarer tilgjengelig.';
+        } else {
+          artistCommentsEl.textContent = 'Ingen kommentarer tilgjengelig.';
+        }
+      }catch(e){
+        artistCommentsEl.textContent = 'Ingen kommentarer tilgjengelig.';
+      }
+    } else {
+      // inline artist comments text
+      artistCommentsEl.textContent = t.artist_comments;
     }
 
     updateActive();

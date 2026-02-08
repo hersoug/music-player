@@ -6,7 +6,8 @@
     "artist": "DJ Kalifen / Carl Fredrik Hersoug",
     "album": "Just Ask Yourself One Question",
     "cover": "music/covers/cfh_question.jpg",
-    "lyrics": "lyrics/questionintro.txt"
+    "lyrics": "lyrics/questionintro.txt",
+    "artist_comments": "Dette er introen til albumet.\n\nMusikken setter stemningen for det som kommer."
   },
   {
     "id": "song2",
@@ -14,6 +15,7 @@
     "title": "One Question (Instrumental Bankrupt Remix)",
     "artist": "DJ Kalifen / Carl Fredrik Hersoug",
     "album": "Just Ask Yourself One Question",
-    "cover": "music/covers/cfh_question.jpg"
+    "cover": "music/covers/cfh_question.jpg",
+    "artist_comments": "En instrumental remix med et mer minimalistisk uttrykk.\n\nIdeen var å strippe ned låten til det essensielle."
   }
 ]
