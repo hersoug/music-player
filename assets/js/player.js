@@ -28,6 +28,7 @@
   const currentTimeEl = document.getElementById('currentTime');
   const durationEl = document.getElementById('duration');
   const toggleCommentsBtn = document.getElementById('toggle-comments');
+  const toggleLyricsBtn = document.getElementById('toggle-lyrics');
 
   let playlist = [];
   let current = -1;
@@ -195,6 +196,32 @@
   toggleCommentsBtn.addEventListener('click', () => {
     artistCommentsEl.classList.toggle('collapsed');
     toggleCommentsBtn.textContent = artistCommentsEl.classList.contains('collapsed') ? '▶' : '▼';
+  });
+
+  // Toggle lyrics
+  toggleLyricsBtn.addEventListener('click', () => {
+    lyricsEl.classList.toggle('collapsed');
+    toggleLyricsBtn.textContent = lyricsEl.classList.contains('collapsed') ? '▶' : '▼';
+  });
+
+  // Initialize collapsed state based on screen size
+  function initializeCollapsibleSections() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+      // On mobile, collapse lyrics by default
+      lyricsEl.classList.add('collapsed');
+      toggleLyricsBtn.textContent = '▶';
+    }
+  }
+
+  // Initialize on load
+  initializeCollapsibleSections();
+
+  // Re-initialize on window resize (debounced)
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initializeCollapsibleSections, 250);
   });
 
   // Start
