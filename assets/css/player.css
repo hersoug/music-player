@@ -219,6 +219,7 @@ body{
   white-space:pre-wrap;
   word-wrap:break-word;
   overflow-wrap:break-word;
+  font-family:inherit;
 }
 
 footer{margin-top:1rem;color:var(--muted);font-size:.9rem}
