@@ -65,5 +65,12 @@
     "album": "Make Trumpet Great Again",
     "cover": "music/covers/cfh_trumpet.jpg",
     "artist_comments": "comments/cfh_trumpettechno.txt"
+  },
+  {
+    "src": "music/cfh_garmin.mp3",
+    "title": "Garmin",
+    "artist": "DJ Kalifen (Carl Fredrik)",
+    "album": "Garmin",
+    "artist_comments": "comments/cfh_garmin.txt"
   }
 ]
