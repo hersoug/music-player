@@ -27,6 +27,7 @@
   const progress = document.getElementById('progress');
   const currentTimeEl = document.getElementById('currentTime');
   const durationEl = document.getElementById('duration');
+  const toggleCommentsBtn = document.getElementById('toggle-comments');
 
   let playlist = [];
   let current = -1;
@@ -188,6 +189,12 @@
   progress.addEventListener('input', () => {
     if(!isFinite(audio.duration)) return;
     audio.currentTime = (progress.value / 100) * audio.duration;
+  });
+
+  // Toggle artist comments
+  toggleCommentsBtn.addEventListener('click', () => {
+    artistCommentsEl.classList.toggle('collapsed');
+    toggleCommentsBtn.textContent = artistCommentsEl.classList.contains('collapsed') ? '▶' : '▼';
   });
 
   // Start

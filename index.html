@@ -42,17 +42,20 @@
           <h3>Spilleliste</h3>
           <ul id="playlist"></ul>
         </section>
-
-        <section class="lyrics">
-          <h3>Lyrikk</h3>
-          <pre id="lyrics">Ingen tilgjengelig lyrikk.</pre>
-        </section>
       </div>
 
       <div class="player-right">
         <section class="artist-comments">
-          <h3>Artistens kommentarer</h3>
-          <div id="artist-comments">Ingen kommentarer tilgjengelig.</div>
+          <h3>
+            Artistens kommentarer
+            <button id="toggle-comments" class="toggle-btn" title="Vis/skjul" aria-label="Vis/skjul kommentarer">▼</button>
+          </h3>
+          <div id="artist-comments" class="collapsible-content collapsed">Ingen kommentarer tilgjengelig.</div>
+        </section>
+
+        <section class="lyrics">
+          <h3>Lyrikk</h3>
+          <pre id="lyrics">Ingen tilgjengelig lyrikk.</pre>
         </section>
       </div>
     </div>
