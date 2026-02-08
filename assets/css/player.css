@@ -54,8 +54,26 @@ body{
   margin-bottom:0.75rem;
 }
 
+.header-title{
+  display:flex;
+  flex-direction:column;
+  gap:0.25rem;
+}
+
 .player-header h1{
   margin:0;
+}
+
+.article-link{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:0.9rem;
+  transition:opacity 0.2s;
+}
+
+.article-link:hover{
+  opacity:0.8;
+  text-decoration:underline;
 }
 
 /* Two-column layout */
