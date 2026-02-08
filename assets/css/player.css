@@ -181,14 +181,16 @@ body{
   white-space:pre-wrap;
   line-height:1.6;
   max-height:300px;
-  overflow:auto;
+  overflow-y:auto;
+  overflow-x:hidden;
+  opacity:1;
   transition:max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .collapsible-content.collapsed{
-  max-height:0;
-  opacity:0;
-  overflow:hidden;
+  max-height:0 !important;
+  opacity:0 !important;
+  overflow:hidden !important;
 }
 
 /* Lyrics panel in right column */
