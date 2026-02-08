@@ -6,7 +6,7 @@
     "album": "Just Ask Yourself One Question",
     "cover": "music/covers/cfh_question.jpg",
     "lyrics": "lyrics/questionintro.txt",
-    "artist_comments": "Dette er introen til albumet.\n\nMusikken setter stemningen for det som kommer."
+    "artist_comments": "comments/questionintro.txt"
   },
   {
     "src": "music/cfh_questionbankrupt.mp3",
@@ -14,6 +14,6 @@
     "artist": "DJ Kalifen / Carl Fredrik Hersoug",
     "album": "Just Ask Yourself One Question",
     "cover": "music/covers/cfh_question.jpg",
-    "artist_comments": "En instrumental remix med et mer minimalistisk uttrykk.\n\nIdeen var å strippe ned låten til det essensielle."
+    "artist_comments": "comments/questionbankrupt.txt"
   }
 ]
