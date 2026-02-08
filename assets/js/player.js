@@ -27,7 +27,6 @@
   const progress = document.getElementById('progress');
   const currentTimeEl = document.getElementById('currentTime');
   const durationEl = document.getElementById('duration');
-  const volumeEl = document.getElementById('volume');
 
   let playlist = [];
   let current = -1;
@@ -190,13 +189,6 @@
     if(!isFinite(audio.duration)) return;
     audio.currentTime = (progress.value / 100) * audio.duration;
   });
-
-  volumeEl.addEventListener('input', () => {
-    audio.volume = Number(volumeEl.value);
-  });
-
-  // initial volume
-  audio.volume = Number(volumeEl.value);
 
   // Start
   loadPlaylist();
