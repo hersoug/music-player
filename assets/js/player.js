@@ -69,7 +69,17 @@
 
   function updateActive(){
     Array.from(playlistEl.children).forEach(li => {
-      li.classList.toggle('active', Number(li.dataset.index) === current);
+      const isActive = Number(li.dataset.index) === current;
+      li.classList.toggle('active', isActive);
+
+      // Scroll active item to near the top
+      if(isActive){
+        li.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+      }
     });
   }
 
@@ -83,10 +93,8 @@
     albumEl.textContent = t.album || '';
     if(t.cover){
       coverEl.src = t.cover;
-      coverEl.style.display = '';
     } else {
       coverEl.src = '';
-      coverEl.style.display = 'none';
     }
     // lyrics can be a string or a URL
     if(!t.lyrics){

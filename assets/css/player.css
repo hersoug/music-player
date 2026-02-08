@@ -131,11 +131,21 @@ body{
 }
 .playlist{
   margin-top:1rem;
+  background:rgba(255,255,255,0.02);
+  padding:.75rem;
+  border-radius:6px;
+}
+.playlist h3{
+  margin-top:0;
+  margin-bottom:0.75rem;
 }
 .playlist ul{
   list-style:none;
   padding:0;
   margin:0;
+  max-height:400px;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 .playlist li{
   padding:.5rem;
@@ -254,5 +264,9 @@ footer{margin-top:1rem;color:var(--muted);font-size:.9rem}
 
   .lyrics{
     max-height:250px;
+  }
+
+  .playlist ul{
+    max-height:300px;
   }
 }
